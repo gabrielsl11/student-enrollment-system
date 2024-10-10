@@ -1,0 +1,28 @@
+<form action="/create" method="post" class="d-flex flex-column align-items-center gap-3 w-100">
+    <div class="w-50">
+        <h2 class="text-start">Create course</h2>
+    </div>
+
+    <label for="title" class="d-flex flex-column align-items-start gap-1 w-50">
+        <span class="fw-semibold">Title</span>
+
+        <input type="text" name="title" id="title" class="form-control border-secondary w-100" placeholder="Type course's title">
+    </label>
+
+    <label for="description" class="d-flex flex-column align-items-start gap-1 w-50">
+        <span class="fw-semibold">Description</span>
+
+        <textarea name="description" id="description" class="form-control border-secondary w-100" placeholder="Type course's description"></textarea>
+    </label>
+
+    <label for="duration" class="d-flex flex-column align-items-start gap-1 w-50">
+        <span class="fw-semibold">Duration in hours</span>
+
+        <input type="number" name="duration" id="duration" class="form-control border-secondary w-100" placeholder="Type course's duration">
+    </label>
+
+    <div class="d-flex w-50 gap-1">
+        <input type="submit" value="Create" class="btn btn-success w-50">
+        <a href="/" class="btn btn-danger w-50">Cancel</a>
+    </div>
+</form>

@@ -1,0 +1,88 @@
+<div class="w-100 d-flex justify-content-between">
+    <form action="/results" method="get" class="d-flex gap-1">
+        <input type="text" name="search" class="form-control border border-primary"
+            placeholder="Search for anything...">
+        <input type="submit" value="Search" class="btn btn-primary">
+    </form>
+
+    <div class="d-flex justify-content-end gap-1 w-25">
+        <a href="/" class="btn btn-danger w-75">Return</a>
+    </div>
+</div>
+
+<h2>Results for "{{search}}" in Courses</h2>
+
+<table class="table table-striped table-light text-center shadow-lg">
+    <thead>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Duration</th>
+        <th>Edit</th>
+    </thead>
+    <tbody>
+        {{#each courses}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{title}}</td>
+            <td>{{description}}</td>
+            <td>{{duration}}h</td>
+            <td>
+                <div class="d-flex justify-content-center gap-1">
+                    <a href="/updateCourse/{{id}}" class="btn btn-sm btn-primary">Update</a>
+                    <a href="/deleteCourse/{{id}}" class="btn btn-sm btn-danger">Delete</a>
+                </div>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<h2>Results for "{{search}}" in Students</h2>
+
+<table class="table table-striped table-light text-center shadow-lg">
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Birthday</th>
+        <th>Enrolled in</th>
+        <th>Edit</th>
+    </thead>
+    <tbody>
+        {{#each students}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{name}}</td>
+            <td>{{email}}</td>
+            <td class="date_of_birth">{{date_of_birth}}</td>
+            <td>{{course_title}}</td>
+            <td>
+                <div class="d-flex justify-content-center gap-1">
+                    <a href="/updateStudent/{{id}}" class="btn btn-sm btn-primary" ;>Update</a>
+                    <a href="/deleteStudent/{{id}}" class="btn btn-sm btn-danger" ;>Delete</a>
+                </div>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const dateOfBirth = document.querySelectorAll('.date_of_birth');
+
+        const positionsToShow = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+
+        dateOfBirth.forEach(element => {
+            const originalDateOfBirth = element.innerHTML
+
+            const newDateOfBirth = originalDateOfBirth
+                .split('')
+                .map((char, index) => (positionsToShow.includes(index) ? char : ''))
+                .join('')
+
+            element.innerHTML = newDateOfBirth
+        });
+    });
+</script>

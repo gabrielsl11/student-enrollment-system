@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/bootstrap.min.css">
+
+    <title>STUDENT ENROLLMENT SYSTEM</title>
+</head>
+
+<body class="d-flex flex-column align-items-center my-5 gap-5 bg-dark">
+    {{> alerts}}
+
+    <header>
+        <h2 class="text-white">STUDENT ENROLLMENT SYSTEM</h2>
+    </header>
+
+    <main class="d-flex flex-column align-items-center justify-content-center p-5 rounded gap-5 w-75 bg-white">
+        {{{body}}}
+    </main>
+
+    <footer>
+        <a href="https://github.com/gabrielsl11" class="text-white text-decoration-none" target="_blank">
+            <span>gabrielsl11</span>
+        </a>
+    </footer>
+
+    <script src="/scripts/script.js"></script>
+    <script src="/scripts/bootstrap.min.js"></script>
+</body>
+
+</html>

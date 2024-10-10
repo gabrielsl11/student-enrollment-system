@@ -1,0 +1,38 @@
+<form action="/enroll" method="post" class="d-flex flex-column align-items-center gap-3 w-100">
+    <div class="w-50">
+        <h2 class="text-start">Enroll student</h2>
+    </div>
+    
+    <label for="name" class="d-flex flex-column align-items-start gap-1 w-50">
+        <span class="fw-semibold">Name</span>
+
+        <input type="text" name="name" id="name" class="form-control border-secondary w-100" placeholder="Type students's name">
+    </label>
+
+    <label for="email" class="d-flex flex-column align-items-start gap-1 w-50">
+        <span class="fw-semibold">Email</span>
+
+        <input type="text" name="email" id="email" class="form-control border-secondary w-100" placeholder="Type students's email">
+    </label>
+
+    <label for="date_of_birth" class="d-flex flex-column align-items-start gap-1 w-50">
+        <span class="fw-semibold">Birthday</span>
+
+        <input type="date" name="date_of_birth" id="date_of_birth" class="form-control border-secondary w-100">
+    </label>
+
+    <label for="course_title" class="d-flex flex-column align-items-start gap-1 w-50">
+        <span class="fw-semibold">Course</span>
+
+        <select name="course_title" id="course_title" class="form-select border-secondary">
+            {{#each courses}}
+            <option value="{{title}}">{{title}}</option>
+            {{/each}}
+        </select>
+    </label>
+
+    <div class="d-flex w-50 gap-1">
+        <input type="submit" value="Enroll" class="btn btn-success w-50">
+        <a href="/" class="btn btn-danger w-50">Cancel</a>
+    </div>
+</form>
